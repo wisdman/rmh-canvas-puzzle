@@ -13,6 +13,9 @@ require("./lib/modal-window.js")
 
 void function main(){
 
+  const MIN = 9
+  const MAX = 20
+
   const connectedSound = new game.Sound("assets/connected", 10)
 
   const JSAW = new jigsaw.Jigsaw({
@@ -31,7 +34,6 @@ void function main(){
     imageSelector.classList.remove("imageSelector--hide")
 
     const imageList = JSON.parse(Base64.decode(window._ImageListBase64))
-    console.log(imageList)
 
     imageList.forEach(data =>{
 
@@ -50,7 +52,15 @@ void function main(){
       figureNode.appendChild(figcaptionNode)
 
       figureNode.addEventListener("click", () => {
+        const pieces = data.pieces || Math.round(MIN + Math.random() * (MAX - MIN))
+
         JSAW.set_image(`images/${data.fileName}`)
+
+        JSAW.eventBus.emit(jigsaw.Events.JIGSAW_SHUFFLE)
+        JSAW.eventBus.emit(jigsaw.Events.PARTS_NUMBER_CHANGED, pieces)
+        JSAW.eventBus.emit(jigsaw.Events.RENDER_REQUEST)
+
+
         imageSelector.classList.add("imageSelector--hide")
       })
 
