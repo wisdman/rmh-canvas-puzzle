@@ -27,6 +27,8 @@ void function main(){
       connectedSound.play()
   });
 
+  window._ShowWIN = () => JSAW.ui.show_time()
+
   window._ShowImageSelector = () => {
     const imageSelector = document.querySelector(".imageSelector")
     if (!imageSelector) return

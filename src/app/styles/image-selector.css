@@ -23,7 +23,7 @@
   background: url('../assets/bg.jpg') 0 0 repeat;
 
   opacity: 1;
-  transition: opacity 300ms linear 0s, visibility 0s linear 0s;
+  transition: opacity 500ms linear 0s, visibility 0s linear 0s;
 }
 
 .imageSelector--hide {
