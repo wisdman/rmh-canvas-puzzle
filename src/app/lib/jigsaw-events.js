@@ -14,7 +14,7 @@
         
         JIGSAW_SET_IMAGE: "JigsawSetImageEvent",
         
-        //JIGSAW_SHUFFLE: "JigsawShuffleEvent",
+        JIGSAW_SHUFFLE: "JigsawShuffleEvent",
         
         // SHOW_PREVIEW: "JigsawShowPreview",
         
@@ -22,11 +22,11 @@
         
         // SHOW_FILEPICKER: "JigsawShowFilepicker",
         
-        //SHOW_EDGE: "ShowEdgeEvent",
+        // SHOW_EDGE: "ShowEdgeEvent",
         
-        //SHOW_MIDDLE: "ShowMiddleEvent",
+        // SHOW_MIDDLE: "ShowMiddleEvent",
         
-        //SHOW_ALL: "ShowAllEvent",
+        // SHOW_ALL: "ShowAllEvent",
         
         JIGSAW_COMPLETE: "JigsawCompleteEvent",
         
