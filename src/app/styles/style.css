@@ -36,7 +36,7 @@ div#canvas-wrap {
 
 canvas#canvas, canvas#buffer, canvas#image-preview {
     position: absolute;
-    top: 45px;
+    top: 0;
     left: 0;
 }
 

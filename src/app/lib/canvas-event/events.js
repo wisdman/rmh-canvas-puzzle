@@ -544,10 +544,11 @@ Cevent.fn = Cevent.prototype = {
     init: function(cv, shapes) {
         this.cv  = cv;
 
-        if (window.getComputedStyle)
-            this.background = getComputedStyle(this.cv.parentElement).backgroundColor;
-        else
-            this.background = "#333";
+        // if (window.getComputedStyle)
+        //     this.background = getComputedStyle(this.cv.parentElement).backgroundColor;
+        // else
+        //     this.background = "#333";
+
 
         if (!cv.getContext && window.G_vmlCanvasManager) {
             G_vmlCanvasManager.initElement(cv);
@@ -820,6 +821,10 @@ Cevent.fn = Cevent.prototype = {
         y = y || 0;
         width  = width    || this.cv.width;
         height = height || this.cv.height;
+
+        let img = new Image();
+        img.src = 'assets/bg.jpg';
+        this.background = this.ctx.createPattern(img, 'repeat');
 
         this.ctx.fillStyle = this.background;
         this.ctx.fillRect(x, y, width, height);
