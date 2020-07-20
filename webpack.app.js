@@ -119,10 +119,10 @@ module.exports = {
       patterns: [{
         from: PATH("./src/app/assets"),
         to: "assets"
-      }, ...(isProduction ? [] : [{
+      },{
         from: PATH("./src/app/images"),
         to: "images"
-      }]) ],
+      }],
     }),
   ],
 
