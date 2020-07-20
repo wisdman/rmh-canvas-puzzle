@@ -1,5 +1,6 @@
 const { app, BrowserWindow, powerSaveBlocker, globalShortcut, screen } = require("electron")
 const { WINDOW_OPTIONS } = require("./window-options.js")
+const ImageList = require("./image-list.js")
 
 const URL = `file://${__dirname}/app/index.html`
 
@@ -31,7 +32,7 @@ function reload() {
   windows.forEach(w => w.webContents.reloadIgnoringCache())
 }
 
-function initViewPort() {
+async function initViewPort() {
   const {id, x, y, width, height} = screen.getAllDisplays()[0].bounds
 
   let win = new BrowserWindow({
@@ -47,6 +48,15 @@ function initViewPort() {
     win = null
   })
 
+  win.webContents.once("dom-ready", async () => {
+    const imageList = await ImageList()
+    const imageListBase64 = Buffer.from(JSON.stringify(imageList)).toString("base64")
+    win.webContents.executeJavaScript(`
+      window._ImageListBase64 = "${imageListBase64}"
+      setTimeout(window._ShowImageSelector, 3000);
+    `)
+  })
+
   win.removeMenu()
   win.loadURL(URL)
   win.show()
@@ -55,13 +65,13 @@ function initViewPort() {
   DEFINE_DEBUG && win.webContents.openDevTools()
 }
 
-function initGlobalShortcut() {
+async function initGlobalShortcut() {
   globalShortcut.register("F5", reload)
   globalShortcut.register("CommandOrControl+Q", exit)
 }
 
-function main() {
-  initViewPort()
-  initGlobalShortcut()
+async function main() {
+  await initViewPort()
+  await initGlobalShortcut()
 }
 
