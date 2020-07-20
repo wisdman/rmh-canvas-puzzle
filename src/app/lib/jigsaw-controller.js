@@ -16,9 +16,9 @@
             maxHeight: 999,
             defaultImage: "assets/lit3d.png",
             piecesNumberTmpl: "%d",
-            redirect: "",
+            //redirect: "",
             border: true,
-            defaultPieces: 10,
+            defaultPieces: 9,
             shuffled: true,
             rotatePieces: true,
             numberOfPieces: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
@@ -44,7 +44,7 @@ jigsaw.Jigsaw = Class.extend({
         this.opts = opts = Util.extend(opts || {}, default_opts);
         this.max_width = opts.maxWidth;
         this.max_height = opts.maxHeight;
-        $("redirect-form").action = opts.redirect;
+        //$("redirect-form").action = opts.redirect;
         
         DEFAULT_IMAGE = opts.defaultImage;
 
@@ -84,13 +84,7 @@ jigsaw.Jigsaw = Class.extend({
         
         eventBus.on(jigsaw.Events.JIGSAW_COMPLETE, function(){
             self.ui.stop_clock();
-            // redirect an send time
-            if (opts.redirect) {
-                self.redirect();
-            // just show time
-            } else {
-                self.ui.show_time();
-            }
+            self.ui.show_time();
         });
 
         // Event handlers
@@ -144,11 +138,11 @@ jigsaw.Jigsaw = Class.extend({
         }
     },
     
-    redirect: function() {
-        $("t").value = this.ui.time();
-        $("p").value = this.parts;
-        $("redirect-form").submit();
-    },
+    // redirect: function() {
+    //     $("t").value = this.ui.time();
+    //     $("p").value = this.parts;
+    //     $("redirect-form").submit();
+    // },
     
     /* number of puzzle pieces */
     set_parts: function(n) {

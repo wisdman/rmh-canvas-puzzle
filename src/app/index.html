@@ -3,48 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
   <title>RMH Canvas puzzle</title>
-  <!-- <link rel="stylesheet" href="css/index.css" type="text/css" charset="utf-8"> -->
-
-  <!-- <script type="text/javascript" src="js/sound.js" defer></script>
-  <script type="text/javascript" src="js/event-emiter.js" defer></script>
-  <script type="text/javascript" src="js/canvas-event/class.js" defer></script>
-  <script type="text/javascript" src="js/canvas-event/events.js" defer></script>
-  <script type="text/javascript" src="js/canvas-event/shapes.js" defer></script>
-  <script type="text/javascript" src="js/utils.js" defer></script>
-  <script type="text/javascript" src="js/jigsaw-objects.js" defer></script>
-  <script type="text/javascript" src="js/jigsaw-controller.js" defer></script>
-  <script type="text/javascript" src="js/jigsaw-ui.js" defer></script>
-  <script type="text/javascript" src="js/jigsaw-events.js" defer></script>
-  <script type="text/javascript" src="js/modal-window.js" defer></script>
-  <script type="text/javascript" src="js/main.js" defer></script> -->
 </head>
 <body>
   <!-- JIGSAW CANVAS -->
   <div id="canvas-wrap">
-      <canvas id="canvas"></canvas>
-      <canvas class="hide" id="image"></canvas>
-      <canvas class="hide" id="image-preview"></canvas>
+    <canvas id="canvas"></canvas>
+    <canvas class="hide" id="image"></canvas>
+    <canvas class="hide" id="image-preview"></canvas>
   </div>
 
   <!-- MODAL WINDOW -->
   <div class="hide" id="overlay"></div>
   <div id="modal-window" class="hide">
-      <div id="modal-window-msg"></div>
-      <a href="#" id="modal-window-close" class="button">Close</a>
+    <div id="modal-window-msg"></div>
+    <a href="#" id="modal-window-close" class="button">Close</a>
   </div>
 
   <!-- CONGRATULATION -->
   <div id="congrat" class="hide">
-      <h1>Congratulations!</h1>
-      <h2>You solved it in</h2>
-      <h3><span id="time"></span></h3>
+    <h1>Ура!</h1>
+    <h2>Вы победили за:</h2>
+    <h3><span id="time"></span></h3>
   </div>
 
-  <!-- redirect form -->
-  <form class="hide" method="post" id="redirect-form">
-    <input type="text" name="time" id="t" />
-    <input type="text" name="parts" id="p" />
-  </form>
+  <div id="imageSelector" class="imageSelector imageSelector--hide"></div>
 </body>
 </html>

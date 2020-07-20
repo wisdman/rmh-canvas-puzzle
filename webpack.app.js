@@ -115,9 +115,13 @@ module.exports = {
     }),
 
     new CopyWebpackPlugin({
-      patterns: [
-        { from: PATH("./src/app/assets"), to: "assets" },
-      ],
+      patterns: [{
+        from: PATH("./src/app/assets"),
+        to: "assets"
+      }, ...(isProduction ? [] : [{
+        from: PATH("./src/app/images"),
+        to: "images"
+      }]) ],
     }),
   ],
 

@@ -65,6 +65,9 @@ function closeModal(e) {
         document.body.appendChild(current);
     }, 600);
 
+    // TODO: Need Fix it!!!!!
+    document.querySelector(".imageSelector").classList.remove("imageSelector--hide")
+
     return false;
 }
 
