@@ -1,0 +1,41 @@
+{
+  "name": "rmh-canvas-puzzle",
+  "version": "1.0.0",
+  "description": "Russia – My History multimedia exhibition touch stand with puzzle",
+  "main": "artifacts/main.js",
+  "scripts": {
+    "build-app": "webpack --config ./webpack.app.js",
+    "build-electron": "webpack --config ./webpack.electron.js",
+    "clean": "rimraf ./artifacts/* && rimraf ./release/*",
+    "pack": "electron-packager ./artifacts lit3d-client --platform=win32 --arch=x64 --overwrite --out=./release",
+    "release": "set NODE_ENV=production&& npm run clean && npm run build-app && npm run build-electron && npm run pack",
+    "start": "npm run clean && npm run build-app && npm run build-electron && electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/Lit3D/rmh-canvas-puzzle",
+  "homepage": "https://github.com/Lit3D/rmh-canvas-puzzle",
+  "bugs": "https://github.com/Lit3D/rmh-canvas-puzzle/issues",
+  "author": "Wisdman <wisdman@wisdman.io> (https://github.com/wisdman)",
+  "contributors": [
+    "Wisdman <wisdman@wisdman.io> (https://github.com/wisdman)",
+    "Yulia Fedyakina <iulia.fedyakina@gmail.com> (https://github.com/saigach)"
+  ],
+  "license": "unlicense",
+  "private": true,
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^3.6.0",
+    "cssnano": "^4.1.10",
+    "electron": "^9.1.0",
+    "electron-packager": "^15.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "rimraf": "^3.0.2",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "terser-webpack-plugin": "^3.0.7",
+    "webpack": "^5.0.0-beta.22",
+    "webpack-cli": "^4.0.0-beta.8"
+  }
+}
