@@ -9,7 +9,9 @@ require("./lib/jigsaw-objects.js")
 require("./lib/jigsaw-controller.js")
 require("./lib/jigsaw-ui.js")
 require("./lib/jigsaw-events.js")
-require("./lib/modal-window.js")
+
+const fireworksStart = require("./lib/fireworks.js")
+
 
 void function main(){
 
@@ -27,7 +29,15 @@ void function main(){
       connectedSound.play()
   });
 
-  window._ShowWIN = () => JSAW.ui.show_time()
+  window._WIN = () => {
+    const fireworksStop = fireworksStart()
+    document.querySelector(".fireworks").classList.remove("fireworks--hide")
+    document.querySelector(".fireworks-reset").addEventListener("click", () => {
+      document.querySelector(".imageSelector").classList.remove("imageSelector--hide")
+      document.querySelector(".fireworks").classList.add("fireworks--hide")
+      fireworksStop()
+    }, { once: true })
+  }
 
   window._ShowImageSelector = () => {
     const imageSelector = document.querySelector(".imageSelector")

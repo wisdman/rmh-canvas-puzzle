@@ -12,9 +12,9 @@ jigsaw.UI = Class.extend({
         var self = this;
         
         this.eventBus = eventBus;
-        this.clock = document.createElement("div");// $("clock");
+        this.clock = document.querySelector(".game-time")
         // iniciar eventos
-        init_events(this, eventBus);
+        //init_events(this, eventBus);
 
         //eventBus.on(jigsaw.Events.JIGSAW_SHUFFLE, this.init_clock.bind(this));
         //eventBus.on(jigsaw.Events.SHOW_PREVIEW, this.show_preview.bind(this));
@@ -50,8 +50,9 @@ jigsaw.UI = Class.extend({
     // },
 
     show_time: function() {
-        this.show_modal("congrat");
-        $("time").innerHTML = this.clock.innerHTML;
+        //this.show_modal("congrat");
+        //$("time").innerHTML = this.clock.innerHTML;
+        window._WIN()
     },
     
     time: function() {
@@ -65,9 +66,9 @@ jigsaw.UI = Class.extend({
                (s > 9 ? s : "0" + s);
     },
     
-    show_modal: function(id) {
-        game.Modal.open(id);
-    },
+    // show_modal: function(id) {
+    //     game.Modal.open(id);
+    // },
     
     // show_filepicker: function() {
     //     this.show_modal("create-puzzle");
@@ -79,80 +80,80 @@ jigsaw.UI = Class.extend({
 });
 
 /* interface events */
-function init_events(self, eventBus) {
-    // function handleFiles(files) {
-    //     var file = files[0]; // use the first file
+// function init_events(self, eventBus) {
+//     // function handleFiles(files) {
+//     //     var file = files[0]; // use the first file
         
-    //     // file needs to be an image
-    //     if (!file.type.match(/image.*/)) {
-    //         $("image-error").style.display = "block";
-    //         return;
-    //     }
+//     //     // file needs to be an image
+//     //     if (!file.type.match(/image.*/)) {
+//     //         $("image-error").style.display = "block";
+//     //         return;
+//     //     }
 
-    //     var reader = new FileReader();
+//     //     var reader = new FileReader();
 
-    //     // on read: change image
-    //     reader.onloadend = function(e) {
-    //         eventBus.emit(jigsaw.Events.JIGSAW_SET_IMAGE, this.result);
-    //         close_lightbox();
-    //     }
+//     //     // on read: change image
+//     //     reader.onloadend = function(e) {
+//     //         eventBus.emit(jigsaw.Events.JIGSAW_SET_IMAGE, this.result);
+//     //         close_lightbox();
+//     //     }
 
-    //     reader.readAsDataURL(file);
-    // }
+//     //     reader.readAsDataURL(file);
+//     // }
 
-    // // if FileReader exists
-    // if (window.FileReader && new FileReader().onload === null) {
-    //     // show create button
-    //     $("create").style.display = "block";
+//     // // if FileReader exists
+//     // if (window.FileReader && new FileReader().onload === null) {
+//     //     // show create button
+//     //     $("create").style.display = "block";
         
-    //     // Util.$("image-input").change(function() {
-    //     //     handleFiles(this.files);
-    //     // });
+//     //     // Util.$("image-input").change(function() {
+//     //     //     handleFiles(this.files);
+//     //     // });
     
-    //     // If drag event exists
-    //     if ("ondragenter" in window && "ondrop" in window) {
-    //         // show dnd message
-    //         $("dnd").style.display = "block";
+//     //     // If drag event exists
+//     //     if ("ondragenter" in window && "ondrop" in window) {
+//     //         // show dnd message
+//     //         $("dnd").style.display = "block";
             
-    //         document.addEventListener("dragenter", function(e){
-    //             e.stopPropagation();
-    //             e.preventDefault();
-    //             return false;
-    //         }, false);
+//     //         document.addEventListener("dragenter", function(e){
+//     //             e.stopPropagation();
+//     //             e.preventDefault();
+//     //             return false;
+//     //         }, false);
 
-    //         document.addEventListener("dragover", function(e){
-    //             e.stopPropagation();
-    //             e.preventDefault();
-    //             return false;
-    //         }, false);
+//     //         document.addEventListener("dragover", function(e){
+//     //             e.stopPropagation();
+//     //             e.preventDefault();
+//     //             return false;
+//     //         }, false);
                 
-    //         document.addEventListener("drop", function(e){
-    //             e.stopPropagation();
-    //             e.preventDefault();
+//     //         document.addEventListener("drop", function(e){
+//     //             e.stopPropagation();
+//     //             e.preventDefault();
               
-    //             var dt = e.dataTransfer;
-    //             handleFiles(dt.files);
-    //         }, false);
-    //     }
-    // }
+//     //             var dt = e.dataTransfer;
+//     //             handleFiles(dt.files);
+//     //         }, false);
+//     //     }
+//     // }
 
-    function close_lightbox() {
-        game.Modal.close();
-        return false;
-    }
+//     function close_lightbox() {
+//         game.Modal.close();
+//         return false;
+//     }
 
-    // Util.$("set-parts").change(function(){
-    //     eventBus.emit(jigsaw.Events.PARTS_NUMBER_CHANGED, +this.value);
-    //     eventBus.emit(jigsaw.Events.RENDER_REQUEST);
-    // });
+//     // Util.$("set-parts").change(function(){
+//     //     eventBus.emit(jigsaw.Events.PARTS_NUMBER_CHANGED, +this.value);
+//     //     eventBus.emit(jigsaw.Events.RENDER_REQUEST);
+//     // });
 
-    // Cevent.addEventListener("game-options", "mousedown", function(e){
-    //     var target = e.target || e.srcElement;
-    //     if (jigsaw.Events[target.id]){
-    //         e.preventDefault();
-    //         // e.stopPropagation();
-    //         eventBus.emit(jigsaw.Events[target.id]);
-    //     }
-    // });
-}
+//     // Cevent.addEventListener("game-options", "mousedown", function(e){
+//     //     var target = e.target || e.srcElement;
+//     //     if (jigsaw.Events[target.id]){
+//     //         e.preventDefault();
+//     //         // e.stopPropagation();
+//     //         eventBus.emit(jigsaw.Events[target.id]);
+//     //     }
+//     // });
+// }
 }());
