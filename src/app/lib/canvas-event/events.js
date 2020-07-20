@@ -549,7 +549,6 @@ Cevent.fn = Cevent.prototype = {
         // else
         //     this.background = "#333";
 
-
         if (!cv.getContext && window.G_vmlCanvasManager) {
             G_vmlCanvasManager.initElement(cv);
         }
@@ -822,12 +821,9 @@ Cevent.fn = Cevent.prototype = {
         width  = width    || this.cv.width;
         height = height || this.cv.height;
 
-        let img = new Image();
-        img.src = 'assets/bg.jpg';
-        this.background = this.ctx.createPattern(img, 'repeat');
-
-        this.ctx.fillStyle = this.background;
-        this.ctx.fillRect(x, y, width, height);
+        //this.ctx.fillStyle = this.background;
+        //this.ctx.fillRect(x, y, width, height);
+        this.ctx.clearRect(x, y, width, height);
         return this;
     },
 

@@ -72,6 +72,7 @@ module.exports = {
         options: {
           importLoaders: 1,
           esModule: true,
+          url: false,
         }
       },{
         loader: "postcss-loader",
