@@ -64,3 +64,21 @@
   line-height: 1.3;
   text-align: center;
 }
+
+.puzzle-header {
+  font-size: 48px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5000;
+}
+
+.puzzle-image-title {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  z-index: 5000;
+}

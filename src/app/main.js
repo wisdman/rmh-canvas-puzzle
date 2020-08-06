@@ -73,7 +73,7 @@ void function main(){
         JSAW.eventBus.emit(jigsaw.Events.PARTS_NUMBER_CHANGED, pieces)
         JSAW.eventBus.emit(jigsaw.Events.RENDER_REQUEST)
 
-
+        document.querySelector('.puzzle-image-title').innerHTML = data.title
         imageSelector.classList.add("imageSelector--hide")
       })
 
