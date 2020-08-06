@@ -23,6 +23,7 @@ void function main(){
   const JSAW = new jigsaw.Jigsaw({
       defaultImage: "assets/lit3d.png",
       defaultPieces: 9,
+      rotatePieces: false
   });
 
   JSAW.eventBus.on(jigsaw.Events.PIECES_CONNECTED, function() {
