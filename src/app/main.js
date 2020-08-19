@@ -85,5 +85,6 @@ void function main(){
   document.querySelector(".reset-btn").addEventListener("click",  () => {
     document.querySelector(".imageSelector").classList.remove("imageSelector--hide")
     document.querySelector(".fireworks").classList.add("fireworks--hide")
+    document.querySelector('.puzzle-image-title').innerHTML = ""
   })
 }()

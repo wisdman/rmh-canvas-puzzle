@@ -44,7 +44,7 @@
 .imageSelector__item {
   cursor: pointer;
   position: relative;
-  border: 3px solid rgba(255,255,255,0.4);
+  border: 1px solid #cd1719;
   padding: 15px;
 }
 
@@ -59,19 +59,21 @@
 
 .imageSelector__item-caption {
   padding-top: 10px;
-  color: rgb(0 0 0 / .92);
-  font-size: 20px;
+  color: rgb(255 255 255 / .92);
+  font-size: 24px;
   line-height: 1.3;
   text-align: center;
+  font-family: 'Gotham Pro';
 }
 
 .puzzle-header {
-  font-size: 48px;
+  font-size: 72px;
   position: absolute;
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 5000;
+  font-family: 'RodchenkoCTT';
 }
 
 .puzzle-image-title {
@@ -81,4 +83,5 @@
   transform: translateX(-50%);
   font-size: 36px;
   z-index: 5000;
+  font-family: 'Gotham Pro';
 }
