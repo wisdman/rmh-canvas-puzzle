@@ -61,3 +61,16 @@ canvas#image-preview.show {
 
 div#congrat { text-align: center; }
 
+.reset-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1px;
+    font-size: 40px;
+    line-height: 1;
+    background: transparent;
+    border: 0 none;
+    color: rgb(0 0 0 / .75);
+    z-index: 888;
+}
+
